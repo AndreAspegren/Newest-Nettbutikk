@@ -14,10 +14,12 @@ app.MapGet("/textobject", async () =>
     var connStr = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=Database;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False";
     using (var conn = new SqlConnection(connStr))
     {
-        var products = await conn.QueryAsync<ProductTable>("SELECT * FROM Products");
+        var products = await conn.QueryAsync<Product>("SELECT * FROM Products");
+        foreach(var p in products) Console.WriteLine($"{p.Name} {p.Description}");
         return products;
     }
 });
 
 app.UseStaticFiles();
 app.Run();
+
