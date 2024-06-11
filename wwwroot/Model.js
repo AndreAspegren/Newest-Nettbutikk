@@ -19,7 +19,7 @@ let model = {
     },
 
     data: {
-        products: await axios.get(`https://localhost:8000/textobject`),
+        products: await axios.get(`/products`),
     }
 
 
