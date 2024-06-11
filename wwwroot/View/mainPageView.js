@@ -1,21 +1,24 @@
 updateview();
 
 function mainPage() {
-    app.innerHTML = `
+    app.innerHTML =`
     
     
     <div id="mainDiv">
 
-        <img src="" id="logo" onclick="logo"/>
-
+        <div id="login">
+        <img src="" id="logo" onclick="logo" placeholder="Logo"/>
+        <button id="login"> Logg inn </button>
+        <button id="cart"> Handlekurv </button>
+        <button id="huskerikkehvadensistevar">husker ikke hva denne gjør</button>
+        </div>
         <div id="search">
             <input type="text" onchange="seearchbar" id="searchbar" placeholder="Søk..." />
             <button id="seachbutton" id="seachbutton" onclick="searchbutton">Søk</button>
         </div>
-
-        test
-        test
-        test
+        <div id="categories"></div>
+        <div id="productcards"></div>
+        <div id="aboutus"></div>
 
 
 
