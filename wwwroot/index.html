@@ -14,27 +14,10 @@
 <body>
     <div id="app">testing</div>
     <script>
-        getData()
-        async function getData() {
-            const url = 'https://localhost:5101'
-            let list = []
-            try {
-                let response = await axios.get(`${url}/textobject`)
-                await console.log(response.data)
-                await reponse.data.forEach(p => {
-                    list.push({
-                        Name: p.Name,
-                        Description: p.Description,
-                        Price: p.Price
-                    })
-                })
-                await console.log(list)
-            }
-            catch (e) {
-                console.log(e)
-            } 
-           
-        }
+       
+            let response = await axios.get(`https://localhost:8000/textobject`)
+            console.log(response.data)
+        
     </script>
 
 </body>
