@@ -7,7 +7,7 @@ function mainPage() {
     <div id="mainDiv">
 
         <div id="login">
-        <img src="" id="logo" onclick="logo" placeholder="Logo"/>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKIXaiO9wCCeAHXEwioJntszdoi9YiEIDDgA&s" id="logo" onclick="logo" placeholder="Logo"/>
         <button id="login"> Logg inn </button>
         <button id="cart"> Handlekurv </button>
         <button id="huskerikkehvadensistevar">husker ikke hva denne gjør</button>
