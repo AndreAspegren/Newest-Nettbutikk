@@ -12,13 +12,15 @@ function mainPage() {
         <button id="cart"> Handlekurv </button>
         <button id="huskerikkehvadensistevar">husker ikke hva denne gjør</button>
         </div>
+
         <div id="search">
             <input type="text" onchange="seearchbar" id="searchbar" placeholder="Søk..." />
             <button id="seachbutton" id="seachbutton" onclick="searchbutton">Søk</button>
         </div>
+
         <div id="categories"></div>
         <div id="productcards"></div>
-        <div id="aboutus"></div>
+        <div id="aboutus">Vi er best, kjøp fra oss</div>
 
 
 
