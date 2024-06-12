@@ -5,7 +5,7 @@ let model = {
         currentView: 'homescreen',
         darkmode: false,
         loggedIn: false,
-
+        html: app = document.getElementById("app")
     },
 
     input:

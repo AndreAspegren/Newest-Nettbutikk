@@ -4,8 +4,7 @@ using System.Collections.Generic;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-var builder = WebApplication.CreateBuilder(args);
-var app = builder.Build();
+var app = WebApplication.CreateBuilder(args).Build();
 
 app.UseHttpsRedirection();
 
