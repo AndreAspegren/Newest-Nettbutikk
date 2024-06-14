@@ -57,6 +57,7 @@ async function genUser() {
         ZipCode: model.input.register.ZipCode,
         ZipArea: model.input.register.ZipArea,
     }
+
     model.input.register.forEach(i => i = "")
     let query = await axios.Post("/genUser", user)
 }
