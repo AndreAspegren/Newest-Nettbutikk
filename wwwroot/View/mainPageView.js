@@ -1,6 +1,6 @@
 updateview();
 
-function mainPage() {
+function homescreen() {
     app.innerHTML =`
     
     
