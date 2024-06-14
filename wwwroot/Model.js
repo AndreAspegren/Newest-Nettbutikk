@@ -14,7 +14,17 @@ let model = {
             id: null,
             password: null,
         },
-
+        register: {
+            FirstName: "",
+            LastName: "",
+            Email: "",
+            PhoneNumber: "",
+            Password: "",
+            DateCreated: "",
+            Address: "",
+            ZipCode: "",
+            ZipArea: ""
+        }
         
     },
 
