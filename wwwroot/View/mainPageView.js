@@ -1,20 +1,25 @@
 updateview();
 
 function homescreen() {
-    let productCards = model.data.products.map(product => `
-        <div class="product-card">
-            <img src="${product.pictureURL}" alt="${product.name}" class="product-image"/>
-            <h3 class="product-name">${product.name}</h3>
-            <p class="product-description">${product.description}</p>
-            <p class="product-price">${product.price} NOK</p>
-            <button class="add-to-cart" onclick="addToCart(${product.id})">Add to Cart</button>
+   let productCards = model.data.products.map(product => `
+       <div class="product-card">
+            <img src="${product.pictureURL}" alt="${product.name}" class="productimage"/>
+           <h3 id="productname">${product.name}</h3>
+           <p id="productdescription">${product.description}</p>
+           <p id="productprice">${product.price} NOK</p>
+           <button id="addtocart" onclick="addToCart(${product.id})">Add to Cart</button>
         </div>
     `).join('');
+
+    let categoryList = model.data.categories.map(category => `
+        <div class="category" onclick="showSubCategories('${category.name}')">${category.name}</div>
+    `).join('');
+
     app.innerHTML =`
     
     
     <div id="mainDiv">
-
+   
         <div id="login">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKIXaiO9wCCeAHXEwioJntszdoi9YiEIDDgA&s" id="logo" onclick="logo" placeholder="Logo"/>
         <button id="login"> Logg inn </button>
@@ -43,14 +48,10 @@ function homescreen() {
             <button id="seachbutton" id="seachbutton" onclick="searchbutton">Søk</button>
         </div>
 
-        <div id="categories"></div>
+        <div id="categories">${categoryList}</div>
+        <div id="subCategories"></div>
         <div id="productcards">${productCards}</div>
         <div id="aboutus">Vi er best, kjøp fra oss</div>
-
-        
-
-
-
 
 
     </div>

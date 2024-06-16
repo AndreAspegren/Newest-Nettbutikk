@@ -31,6 +31,25 @@ let model = {
     data: {
         //products: await axios.get(`/products`),
 
+        categories: [
+            {
+                name: "Category 1",
+                subCategories: [
+                    "sub 1-1",
+                    "sub 1-2",
+                    "sub 1-3",
+                ]
+            },
+            {
+                name: "Category 2",
+                subCategories: [
+                    "sub 2-1",
+                    "sub 2-2",
+                    "sub 2-3",
+                ]
+            },
+        ],
+
         products: [
             {
                 "id": 0,
@@ -41,7 +60,7 @@ let model = {
                 "pictureURL": "https://mkantwerpen.be/wp-content/uploads/2020/01/placeholder.png",
                 "numberInInventory": 100,
                 "technicalInfo": "Fin 1 meter lang usb kabel",
-                "category": "Cable"
+                "category": "sub 1-1"
             },
             {
                 "id": 1,
@@ -52,7 +71,7 @@ let model = {
                 "pictureURL": "https://mkantwerpen.be/wp-content/uploads/2020/01/placeholder.png",
                 "numberInInventory": 120,
                 "technicalInfo": "Finere 2 meter lang usb kabel",
-                "category": "Cable"
+                "category": "sub 1-2"
             },
             {
                 "id": 2,
@@ -63,7 +82,7 @@ let model = {
                 "pictureURL": "https://mkantwerpen.be/wp-content/uploads/2020/01/placeholder.png",
                 "numberInInventory": 140,
                 "technicalInfo": "Fineste 3 meter lang usb kabel",
-                "category": "Cable"
+                "category": "sub 1-3"
             },
             {
                 "id": 3,
@@ -74,7 +93,7 @@ let model = {
                 "pictureURL": "https://mkantwerpen.be/wp-content/uploads/2020/01/placeholder.png",
                 "numberInInventory": 10,
                 "technicalInfo": "Fin liten luftfukter",
-                "category": "Humidifier"
+                "category": "sub 2-1"
             },
             {
                 "id": 4,
@@ -85,7 +104,7 @@ let model = {
                 "pictureURL": "https://mkantwerpen.be/wp-content/uploads/2020/01/placeholder.png",
                 "numberInInventory": 12,
                 "technicalInfo": "Finere medium luftfukter",
-                "category": "Humidifier"
+                "category": "sub 2-2"
             },
             {
                 "id": 5,
@@ -96,8 +115,8 @@ let model = {
                 "pictureURL": "https://mkantwerpen.be/wp-content/uploads/2020/01/placeholder.png",
                 "numberInInventory": 14,
                 "technicalInfo": "Fineste stor luftfukter",
-                "category": "Humidifier"
-            }
+                "category": "sub 2-3"
+            },
         ],
     }
 
