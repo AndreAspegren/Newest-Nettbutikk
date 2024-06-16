@@ -1,6 +1,15 @@
 updateview();
 
 function homescreen() {
+    let productCards = model.data.products.map(product => `
+        <div class="product-card">
+            <img src="${product.pictureURL}" alt="${product.name}" class="product-image"/>
+            <h3 class="product-name">${product.name}</h3>
+            <p class="product-description">${product.description}</p>
+            <p class="product-price">${product.price} NOK</p>
+            <button class="add-to-cart" onclick="addToCart(${product.id})">Add to Cart</button>
+        </div>
+    `).join('');
     app.innerHTML =`
     
     
@@ -35,7 +44,7 @@ function homescreen() {
         </div>
 
         <div id="categories"></div>
-        <div id="productcards"></div>
+        <div id="productcards">${productCards}</div>
         <div id="aboutus">Vi er best, kjøp fra oss</div>
 
         
