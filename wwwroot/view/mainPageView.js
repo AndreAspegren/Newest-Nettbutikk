@@ -60,6 +60,13 @@ function homescreen() {
 
 function updateview(newView)
 {
-    newView ? (model.app.currentView = newView, window[newView]()) : window[model.app.currentView]()
+    mainPage();
 }
 
+async function badInputs() {
+    let badInputMsg = ""
+    model.input.register.forEach((i, value) => {
+        if (!i) badInputMsg += ``;
+    })
+    return false
+}
