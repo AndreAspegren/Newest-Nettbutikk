@@ -12,17 +12,17 @@ var app = WebApplication.CreateBuilder(args).Build();
 var connStr = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=Database;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False";
 var conn = new SqlConnection(connStr);
 
-app.MapGet("/products", async () => // Legge til produkter til nettside
+app.MapGet("/products", async () => // Produkter til nettside
 {
     var products = await conn.QueryAsync<Product>("SELECT * FROM Products");
     return products;
 });
 
 
-app.MapPost("/genUser", async (HttpContext context) => // Legge til bruker til database
+app.MapPost("/setUser", async (HttpContext context) => // Bruker til database
 {
     var body = await new StreamReader(context.Request.Body).ReadToEndAsync();
-    var user = JsonSerializer.Deserialize<genUser>(body);
+    var user = JsonSerializer.Deserialize<setUser>(body);
     var result = await conn.ExecuteAsync(@"
         INSERT INTO Users 
         (FirstName, LastName, Email, Password, PhoneNumber, DateCreated, Address, ZipCode, ZipArea) 
@@ -34,6 +34,12 @@ app.MapPost("/genUser", async (HttpContext context) => // Legge til bruker til d
 app.MapPost("/genReview", async () =>
 {
 
+});
+
+app.MapGet("/getUser", async () => // Bruker til nettside
+{
+    var products = await conn.QueryAsync<Product>("SELECT * FROM Products");
+    return products;
 });
 
 app.UseStaticFiles();
