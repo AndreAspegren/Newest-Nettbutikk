@@ -28,33 +28,18 @@ function register() {
     registerInputs.style.display = (registerInputs.style.display === 'none' || registerInputs.style.display === '') ? 'block' : 'none';
 }
 
-function renderProducts(products) {
-    let ProductCards = products.map(product => `
-        <div id="productcard">
-            <img src="${product.pictureURL}" alt="${product.name}" class="productimage"/>
-            <h3 id="productname">${product.name}</h3>
-            <p id="productdescription">${product.description}</p>
-            <p id="productprice">${product.price} NOK</p>
-            <button id="addtocart" onclick="addToCart(${product.id})">Add to Cart</button>
-            
-        </div>
-    `).join('');
-
-    document.getElementById('productcards').innerHTML = ProductCards;
-}
-
-function showSubCategories(categoryName) {
-    let category = model.data.categories.find(cat => cat.name === categoryName);
-    if (!category) return;
-
-    let subCategoryList = category.subCategories.map(subCategory => `
-        <div id="subcategory" onclick="filterProducts('${subCategory}')">${subCategory}</div>
-    `).join('');
-
-    document.getElementById('subCategories').innerHTML = subCategoryList;
-}
 
 function filterProducts(subCategoryName) {
     let filteredProducts = model.data.products.filter(product => product.category === subCategoryName);
     renderProducts(filteredProducts);
 }
+
+function addToCart(productId) {
+    const product = model.data.products.find(p => p.id === productId);
+    if (product) {
+        model.data.cart.push(product);
+        console.log(`Product ${product.name} added to cart`);
+        updateview();
+    }
+}
+

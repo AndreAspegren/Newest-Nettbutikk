@@ -1,12 +1,26 @@
 updateview();
 
 function homescreen() {
+   let productCards = model.data.products.map(product => `
+       <div class="product-card">
+            <img src="${product.pictureURL}" alt="${product.name}" class="productimage"/>
+           <h3 id="productname">${product.name}</h3>
+           <p id="productdescription">${product.description}</p>
+           <p id="productprice">${product.price} NOK</p>
+           <button id="addtocart" onclick="addToCart(${product.id})">Add to Cart</button>
+        </div>
+    `).join('');
+
+    let categoryList = model.data.categories.map(category => `
+        <div class="category" onclick="showSubCategories('${category.name}')">${category.name}</div>
+    `).join('');
+
     app.innerHTML =`
     
     
 
     <div id="mainDiv">
-
+   
         <div id="login">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKIXaiO9wCCeAHXEwioJntszdoi9YiEIDDgA&s" id="logo" onclick="logo" placeholder="Logo"/>
         <button id="login"> Logg inn </button>
@@ -35,22 +49,17 @@ function homescreen() {
             <button id="seachbutton" id="seachbutton" onclick="searchbutton">Søk</button>
         </div>
 
-        <div id="categories"></div>
-        <div id="productcards"></div>
+        <div id="categories">${categoryList}</div>
+        <div id="subCategories"></div>
+        <div id="productcards">${productCards}</div>
         <div id="aboutus">Vi er best, kjøp fra oss</div>
-
-        
-
-
-
 
 
     </div>
 `}
 
-function updateview(newView)
-{
-    mainPage();
+function updateview(newView) {
+    newView ? (model.app.currentView = newView, window[newView]()) : window[model.app.currentView]()
 }
 
 async function badInputs() {
@@ -59,4 +68,40 @@ async function badInputs() {
         if (!i) badInputMsg += ``;
     })
     return false
+}
+
+function showSubCategories(categoryName) {
+    let category = model.data.categories.find(cat => cat.name === categoryName);
+    if (!category) return;
+
+    let subCategoryList = category.subCategories.map(subCategory => `
+        <div id="subcategory" onclick="filterProducts('${subCategory}')">${subCategory}</div>
+    `).join('');
+
+    document.getElementById('subCategories').innerHTML = subCategoryList;
+}
+
+function renderProducts(products) {
+    let ProductCards = products.map(product => `
+        <div id="productcard">
+            <img src="${product.pictureURL}" alt="${product.name}" class="productimage"/>
+            <h3 id="productname">${product.name}</h3>
+            <p id="productdescription">${product.description}</p>
+            <p id="productprice">${product.price} NOK</p>
+            <button id="addtocart" onclick="addToCart(${product.id})">Add to Cart</button>
+            
+        </div>
+    `).join('');
+
+    document.getElementById('productcards').innerHTML = ProductCards;
+}
+
+function renderCart() {
+    let cartItems = model.data.cart.map(item => `
+        <div class="cart-item">
+            <img src="${item.pictureURL}" alt="${item.name}" class="product-image"/>
+            <h3 class="product-name">${item.name}</h3>
+            <p class="product-price">${item.price} NOK</p>
+        </div>
+    `).join('');
 }
