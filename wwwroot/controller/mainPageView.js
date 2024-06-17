@@ -12,7 +12,7 @@ async function genUser() {
     }
 
     model.input.register.forEach(i => i = "")
-    let query = await axios.Post("/genUser", user)
+    let query = await axios.Post("/setUser", user)
 }
 
 async function badInputs() {

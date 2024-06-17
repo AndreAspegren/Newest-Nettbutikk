@@ -1,6 +1,6 @@
 ﻿namespace Another_Nettbutikk
 {
-    public class genUser
+    public class setUser
     {
         public int ID { get; set; }
         public string FirstName { get; set; }
@@ -13,7 +13,7 @@
         public string ZipCode { get; set; }
         public string ZipArea { get; set; }
 
-        public genUser(int id, string firstName, string lastName, string email, string password, string phoneNumber, string dateCreated, string address, string zipCode, string zipArea)
+        public setUser(int id, string firstName, string lastName, string email, string password, string phoneNumber, string dateCreated, string address, string zipCode, string zipArea)
         {
             ID = id;
             FirstName = firstName;
