@@ -47,9 +47,8 @@ function homescreen() {
     </div>
 `}
 
-function updateview(newView)
-{
-    mainPage();
+function updateview(newView) {
+    newView ? (model.app.currentView = newView, window[newView]()) : window[model.app.currentView]()
 }
 
 async function badInputs() {
