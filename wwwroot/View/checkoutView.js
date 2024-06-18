@@ -11,13 +11,3 @@ function checkout() {
     </div>
     `
 }
-
-
-function checkoutView() {
-    document.getElementById('app').innerHTML = `
-        <div id="cartItems"></div>
-        <button onclick="proceedToPayment()">Proceed to Payment</button>
-    `;
-
-    renderCart();
-}
