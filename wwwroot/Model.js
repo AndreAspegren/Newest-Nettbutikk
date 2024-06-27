@@ -30,7 +30,8 @@ let model = {
     },
 
     data: {
-        products: null,
+       // products: await axios.get(`/products`),
+        kek: "hallo",
         categories: [
             {
                 name: "Category 1",
@@ -49,6 +50,8 @@ let model = {
                 ]
             },
         ],
+
+        
+        
     }
-}
 
