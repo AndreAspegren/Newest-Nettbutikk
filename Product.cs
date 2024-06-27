@@ -12,6 +12,10 @@ public class Product
     public string TechnicalInfo { get; set; }
     public string Category { get; set; }
 
+    public Product()
+    {
+    }
+
     public Product(int id, string name, string description, int price, int sale, string pictureurl,
         int numberininventory, string technicalinfo, string category)
     {
@@ -24,5 +28,6 @@ public class Product
         NumberInInventory = numberininventory;
         TechnicalInfo = technicalinfo;
         Category = category;
+
     }
 }
