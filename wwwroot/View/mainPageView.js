@@ -1,4 +1,4 @@
-homescreen()
+updateview();
 function homescreen() {
   let productCards = model.data.products.map(product => `
        <div class="product-card">
