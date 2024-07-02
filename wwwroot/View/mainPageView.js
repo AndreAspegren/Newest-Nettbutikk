@@ -1,4 +1,4 @@
-
+updateview()
 function homescreen() {
   let productCards = model.data.products.map(product => `
        <div class="product-card">
@@ -58,6 +58,11 @@ function homescreen() {
 
 function updateview(newView) {
     newView ? (model.app.currentView = newView, window[newView]()) : window[model.app.currentView]()
+}
+
+async function init() {
+    let response = await axios.get(`/products`)
+    model.data.products = response.data
 }
 
 async function badInputs() {

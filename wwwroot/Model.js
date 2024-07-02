@@ -1,7 +1,6 @@
 
 
 let model = {
-
     app: {
         userID: null,
         currentView: 'homescreen',
@@ -30,7 +29,8 @@ let model = {
     },
 
     data: {
-       // products: await axios.get(`/products`),
+        // products: await axios.get(`/products`),
+        products: null,
         kek: "hallo",
         categories: [
             {
@@ -51,7 +51,7 @@ let model = {
             },
         ],
 
-        
-        
+
     }
+}
 
