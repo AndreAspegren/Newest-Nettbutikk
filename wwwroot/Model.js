@@ -1,6 +1,5 @@
 
 let model = {
-
     app: {
         userID: null,
         currentView: 'homescreen',
@@ -51,6 +50,8 @@ let model = {
                 ]
             },
         ],
-        cart: [],
+
+        
+        
     }
-};
+
