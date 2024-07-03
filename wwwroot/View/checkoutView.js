@@ -15,8 +15,14 @@ function checkout() {
     app.innerHTML = `
     <div id="maincheckout">
     <div id=homelogo>
-    <img src="null" alt="home logo" onclick="homescreen()"/>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKIXaiO9wCCeAHXEwioJntszdoi9YiEIDDgA&s" id="logo" onclick="logo" placeholder="Logo"/>
     </div>
+     <div id="search">
+           <input type="text" onchange="seearchbar" id="searchbar" placeholder="Søk..." />
+         <button id="seachbutton" id="seachbutton" onclick="searchbutton">Søk</button>
+       </div>
+        <div id="categories">${categoryList}</div>
+
     <div id="cartitem">${cartItems}</div>
     <div id=checkout>
     <button id="checkoutbutton" onclick="completepurchase()">Fullfør kjøp</button>
