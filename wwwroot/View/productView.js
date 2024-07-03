@@ -19,16 +19,10 @@ function productview() {
         <div id="categories">${categoryList}</div>
 
         <img src="img" alt="${product.name}" id="productimg"/>
-        <h2>${product.name}</h2>
-        <p> beskrivelse</p>
+        <h2>navn</h2>
+        <p>beskrivelse</p>
         <p>pris</p>
         <button id="addtocart" onclick="addtocart(${product.id})"> Legg til i handlekurv </button>
 
-
-
-
-
     </div>
-
-    `
-}
+`}

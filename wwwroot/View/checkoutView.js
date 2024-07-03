@@ -13,7 +13,7 @@ function checkout() {
 
 
     app.innerHTML = `
-    <div id="maincheckout">
+    <div id="checkout">
     <div id=homelogo>
     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKIXaiO9wCCeAHXEwioJntszdoi9YiEIDDgA&s" id="logo" onclick="logo" placeholder="Logo"/>
     </div>
