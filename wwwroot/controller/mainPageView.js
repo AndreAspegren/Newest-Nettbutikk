@@ -35,11 +35,8 @@ function filterProducts(subCategoryName) {
 }
 
 function addToCart(productId) {
-    const product = model.data.products.find(p => p.id === productId);
-    if (product) {
-        model.data.cart.push(product);
-        console.log(`Product ${product.name} added to cart`);
+        model.data.cart.push(productId);
         updateview();
     }
-}
+
 

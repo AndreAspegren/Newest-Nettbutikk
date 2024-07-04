@@ -1,6 +1,6 @@
-//updateview();
+updateview();
 
-function productview() {
+function productview(key) {
     let product = model.data.products.find(prod => prod.id == productId)
     if (!product) {
         console.log("fant ikke produkt");
@@ -18,10 +18,12 @@ function productview() {
        </div>
         <div id="categories">${categoryList}</div>
 
-        <img src="img" alt="${product.name}" id="productimg"/>
-        <h2>navn</h2>
-        <p>beskrivelse</p>
-        <p>pris</p>
+        <img src="${model.data.products[key].img}" alt="${model.products[key].name}" id="productimg"/>
+        <h2>${model.data.products[key].name}</h2>
+        <p>versjoner av produkt</p>
+        <p>${model.data.products[key].stock}</p>
+        <p>${model.data.products[key].description}</p>
+        <p>${model.data.products[key].price}</p>
         <button id="addtocart" onclick="addtocart(${product.id})"> Legg til i handlekurv </button>
 
     </div>

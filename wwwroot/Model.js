@@ -31,7 +31,21 @@ let model = {
     {
         // products: await axios.get(`/products`),
         products: [],
+
+        user: {
+            FirstName: "",
+            LastName: "",
+            Email: "",
+            PhoneNumber: "",
+            Password: "",
+            DateCreated: "",
+            Address: "",
+            ZipCode: "",
+            ZipArea: ""
+        },
+
         kek: "hallo",
+
         categories: [
             {
                 name: "Category 1",
