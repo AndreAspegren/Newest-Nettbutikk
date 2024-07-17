@@ -1,0 +1,115 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+#checkout {
+    display: grid;
+    grid-template-areas:
+        "logo search"
+        "categories categories"
+        "cartitem cartitem"
+        "deliveryinfo deliverymethod"
+        "checkoutbutton checkoutbutton";
+    grid-gap: 10px;
+    padding: 10px;
+    flex: 1;
+}
+
+/* Logo */
+#logo {
+    grid-area: logo;
+    max-width: 100px;
+    cursor: pointer;
+}
+
+/* Search bar and button */
+#search {
+    grid-area: search;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#searchbar {
+    width: 60%;
+    padding: 5px;
+}
+
+#searchbutton {
+    padding: 5px 10px;
+    margin-left: 5px;
+}
+
+/* Categories */
+#categories {
+    grid-area: categories;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    background-color: #f0f0f0;
+}
+
+/* Cart items */
+#cartitem {
+    grid-area: cartitem;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Delivery info and method */
+#deliveryinfo {
+    grid-area: deliveryinfo;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#deliverymethod {
+    grid-area: deliverymethod;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Checkout button */
+#checkoutbutton {
+    grid-area: checkoutbutton;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #f0f0f0;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    #checkout {
+        grid-template-areas:
+            "logo"
+            "search"
+            "categories"
+            "cartitem"
+            "deliveryinfo"
+            "deliverymethod"
+            "checkoutbutton";
+    }
+
+    #searchbar {
+        width: 70%;
+    }
+}

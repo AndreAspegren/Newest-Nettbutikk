@@ -1,62 +1,42 @@
 updateview();
 function homescreen() {
-  let productCards = model.data.products.map(product => `
+    let productCards = model.data.products.map(product => `
        <div class="product-card">
            <img src="${product.img}" alt="${product.name}" class="productimage"/>
           <h3 id="productname">${product.name}</h3>
           <p id="productdescription">${product.shortDescription}</p>
           <p id="instock">${product.stock}</p>
           <p id="productprice">${product.price} NOK</p>
-           <button id="addtocart" onclick="addToCart(${product.id})">Legg til handlevogn</button>
+           <button class="buybutton" onclick="addToCart(${product.id})">Add to Cart</button>
        </div>
-    `).join('');
+  `).join('');
 
-   let categoryList = model.data.categories.map(category => `
-       <div class="category" onclick="showSubCategories('${category.name}')">${category.name}</div>
-   `).join('');
-
-  app.innerHTML = `
-    
-    
-   
-  <div id="mainDiv">
-   
-     <div id="login">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKIXaiO9wCCeAHXEwioJntszdoi9YiEIDDgA&s" id="logo" onclick="logo" placeholder="Logo"/>
-      <button id="login"> Logg inn </button>
-
-     <div id="registerdiv">
-     <button onclick="register()"> Registrer bruker </button>
-      <div id="registerinputs" style="display: none;">
-       <input onchange="model.input.register.FirstName = this.value" placeholder = "Fornavn"/>
-      <input onchange="model.input.register.LastName = this.value" placeholder = "Etternavn"/>
-      <input onchange="model.input.register.Email = this.value" placeholder = "E-post"/>
-      <input onchange="model.input.register.PhoneNumber = this.value" placeholder = "Telefonnummer"/>
-    <input onchange="model.input.register.Password = this.value" placeholder = "Passord"/>
-      
-       <input onchange="model.input.register.Address = this.value" placeholder = "Addresse"/>
-       <input onchange="model.input.register.ZipCode = this.value" placeholder = "Postnummer"/>
-      <input onchange="model.input.register.>ZipArea = this.value" placeholder = "Poststed"/>
-      <button onclick="genUser">Registrer bruker</button>
+    app.innerHTML = `
+      <div id="mainDiv">
+          <img src="path/to/logo.png" id="logo" onclick="homescreen()">
+          <div id="search">
+              <input type="text" id="searchbar" placeholder="Search...">
+              <button id="searchbutton">Search</button>
+          </div>
+          <div id="login">
+              <button id="loginbutton" onclick="login()">Login</button>
+              <button id="cartbutton" onclick="cart()">Cart</button>
+          </div>
+          <div id="categories">
+              <button class="category-button" onclick="filterCategory('Electronics')">Electronics</button>
+              <button class="category-button" onclick="filterCategory('Clothing')">Clothing</button>
+              <button class="category-button" onclick="filterCategory('Books')">Books</button>
+          </div>
+          <div id="productcards">
+              ${productCards}
+          </div>
       </div>
-     </div>
+      <footer>
+          <div id="aboutus">About Us: We are a company dedicated to providing the best products...</div>
+      </footer>
+  `;
+}
 
-     <button id="cart"> Handlekurv </button>
-      </div>
-
-      <div id="search">
-           <input type="text" onchange="seearchbar" id="searchbar" placeholder="Søk..." />
-         <button id="seachbutton" id="seachbutton" onclick="searchbutton">Søk</button>
-       </div>
-
-      <div id="categories">${categoryList}</div>
-      <div id="subCategories"></div>
-      <div id="productcards">${productCards}</div>
-      <div id="aboutus">Vi er best, kjøp fra oss</div>
-
-
-    </div>
-`}
 
 function updateview(newView) {
     newView ? (model.app.currentView = newView, window[newView]()) : window[model.app.currentView]()
