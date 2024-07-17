@@ -1,4 +1,4 @@
-/* General styles */
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -21,14 +21,14 @@ body {
     flex: 1;
 }
 
-/* Logo */
+
 #logo {
     grid-area: logo;
     max-width: 100px;
     cursor: pointer;
 }
 
-/* Search bar and button */
+
 #search {
     grid-area: search;
     display: flex;
@@ -46,7 +46,7 @@ body {
     margin-left: 5px;
 }
 
-/* Categories */
+
 #categories {
     grid-area: categories;
     display: flex;
@@ -55,7 +55,7 @@ body {
     background-color: #f0f0f0;
 }
 
-/* Cart items */
+
 #cartitem {
     grid-area: cartitem;
     display: flex;
@@ -63,7 +63,7 @@ body {
     gap: 10px;
 }
 
-/* Delivery info and method */
+
 #deliveryinfo {
     grid-area: deliveryinfo;
     display: flex;
@@ -78,7 +78,7 @@ body {
     gap: 10px;
 }
 
-/* Checkout button */
+
 #checkoutbutton {
     grid-area: checkoutbutton;
     padding: 10px;
@@ -89,14 +89,14 @@ body {
     text-align: center;
 }
 
-/* Footer */
+
 footer {
     text-align: center;
     padding: 20px 0;
     background-color: #f0f0f0;
 }
 
-/* Media Queries */
+
 @media (max-width: 768px) {
     #checkout {
         grid-template-areas:
